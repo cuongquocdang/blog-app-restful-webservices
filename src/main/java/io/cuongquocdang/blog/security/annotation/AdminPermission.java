@@ -1,4 +1,4 @@
-package io.cuongquocdang.blog.security.enumeration;
+package io.cuongquocdang.blog.security.annotation;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 
@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
-@PreAuthorize("hasRole('USER')")
-public @interface UserPermission {
+@PreAuthorize("hasRole('ADMIN')")
+public @interface AdminPermission {
 }

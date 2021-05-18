@@ -16,6 +16,15 @@ import static org.springframework.http.HttpStatus.UNAUTHORIZED;
 @RestController
 public class RestGlobalException extends ResponseEntityExceptionHandler {
 
+    @ExceptionHandler(value = NotPermissionException.class)
+    protected ResponseEntity<RestErrorResponse> handleNotPermissionException(NotPermissionException ex, WebRequest request) {
+        return RestErrorResponse.builder()
+                .status(UNAUTHORIZED)
+                .message(ex.getMessage())
+                .path(getPath(request))
+                .entity();
+    }
+
     @ExceptionHandler(value = BadCredentialException.class)
     protected ResponseEntity<RestErrorResponse> handleBadCredentialException(BadCredentialException ex, WebRequest request) {
         return RestErrorResponse.builder()

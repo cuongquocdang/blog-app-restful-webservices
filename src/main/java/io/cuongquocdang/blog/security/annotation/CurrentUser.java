@@ -1,4 +1,4 @@
-package io.cuongquocdang.blog.security.enumeration;
+package io.cuongquocdang.blog.security.annotation;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 
