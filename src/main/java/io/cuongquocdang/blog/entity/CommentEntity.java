@@ -5,7 +5,7 @@ import javax.persistence.Lob;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "posts")
+@Table(name = "comments")
 public class CommentEntity extends BaseAuditEntity {
 
     private String title;

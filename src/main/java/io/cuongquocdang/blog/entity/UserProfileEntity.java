@@ -20,6 +20,7 @@ public class UserProfileEntity extends BaseAuditEntity {
     private Gender gender;
 
     @Temporal(TemporalType.DATE)
+    @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
     private String city;

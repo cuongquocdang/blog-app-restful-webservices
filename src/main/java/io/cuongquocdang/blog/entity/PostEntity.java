@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "comments")
+@Table(name = "posts")
 @Setter
 @Getter
 public class PostEntity extends BaseAuditEntity {
