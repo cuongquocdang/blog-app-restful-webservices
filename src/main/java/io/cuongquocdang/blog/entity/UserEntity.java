@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,14 +22,11 @@ public class UserEntity extends BaseAuditEntity {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "full_name")
-    private String fullName;
+    @Column(name = "first_name")
+    private String firstName;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
-
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name = "is_enabled")
     private Boolean enabled = Boolean.TRUE;
@@ -40,5 +36,10 @@ public class UserEntity extends BaseAuditEntity {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<RoleEntity> roles = new HashSet<>();
+
+    @OneToOne(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL,
+            mappedBy = "user")
+    private UserProfileEntity userProfile;
 
 }

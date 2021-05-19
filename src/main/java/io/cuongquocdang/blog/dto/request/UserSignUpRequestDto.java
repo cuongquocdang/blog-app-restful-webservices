@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -22,10 +21,8 @@ public class UserSignUpRequestDto implements Serializable {
 
     private String passwordVerification;
 
-    private String fullName;
+    private String firstName;
 
-    private String phoneNumber;
-
-    private LocalDate dateOfBirth;
+    private String lastName;
 
 }
